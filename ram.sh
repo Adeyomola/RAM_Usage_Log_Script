@@ -6,8 +6,11 @@ touch system_memory_usage.log
 #get memory usage from free command
 MemoryUsage=`free --mega | awk 'NR==2{printf("- " "%.2f",$3*100/$2)}'`
 
+#time
+Time=$(date +%H:%M)
+
 #echo the value of MemoryUsage to the memory log file
-echo $MemoryUsage"%" >> system_memory_usage.log
+echo $MemoryUsage"%" "|" $Time >> system_memory_usage.log
 
 #condition that sends email when it's midnight
 if [[ $(date +%H:%M) == "00:00" ]]
