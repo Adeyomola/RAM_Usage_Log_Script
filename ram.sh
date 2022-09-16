@@ -15,7 +15,7 @@ echo $MemoryUsage"%" "|" $Time >> /home/vagrant/my_work/RAMUsageScript/system_me
 #condition that sends email when it's midnight
 if [[ $(date +%H:%M) == "00:00" ]]
 then
-echo "Here's the memory usage log for the day" | mutt -a /home/vagrant/my_work/RAMUsageScript/system_memory_usage.log -s "Memory Usage Log" -- kayzeel@yahoo.com
+echo "Here's the memory usage log for the day" | mutt -a /home/vagrant/my_work/RAMUsageScript/system_memory_usage.log -s "Memory Usage Log" -- email@email.com
 
 #clears the memory log file
 > /home/vagrant/my_work/RAMUsageScript/system_memory_usage.log
